@@ -8,6 +8,7 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,6 +18,7 @@ public class HierarchicalController implements HierarchicalApi {
     HierarchicalService hierarchicalService;
 
     @Override
+    @CrossOrigin
     @PostMapping("/hierarchical")
     public ResponseEntity<ApiResponse> hierarchicalClustering(
             @RequestBody HierarchicalRequest hierarchicalRequest) {
